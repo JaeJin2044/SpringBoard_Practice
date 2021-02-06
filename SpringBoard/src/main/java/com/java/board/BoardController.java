@@ -82,7 +82,7 @@ public class BoardController {
 		//한번에 표시될 페이징 번호 
 		int pageNum_cnt = 10;
 		
-		//
+		//dsfsadfsdfsadf
 		
 		List<BoardEntity> list = service.GetListPage(displayPost, postNum);
 		model.addAttribute("list", list);
