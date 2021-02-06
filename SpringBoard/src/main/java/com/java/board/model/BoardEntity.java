@@ -1,5 +1,7 @@
 package com.java.board.model;
 
+import java.sql.Date;
+
 import org.apache.ibatis.type.Alias;
 
 @Alias("BoardEntity")
@@ -8,9 +10,15 @@ public class BoardEntity {
 	private String title;
 	private String content;
 	private String writer;
-	private String regDate;
+	private Date regDate;
 	private int viewCnt;
 	
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -35,12 +43,7 @@ public class BoardEntity {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getRegDate() {
-		return regDate;
-	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
-	}
+	
 	public int getViewCnt() {
 		return viewCnt;
 	}

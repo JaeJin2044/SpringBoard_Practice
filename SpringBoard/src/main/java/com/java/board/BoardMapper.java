@@ -1,5 +1,6 @@
 package com.java.board;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -14,5 +15,8 @@ public interface BoardMapper {
 	BoardEntity selList_Unit(BoardEntity p);
 	int delBoard(BoardEntity p);
 	int modBoard(BoardEntity p);
-	
+	//게시물 총 개수 
+	int count();
+	//게시물 목록 +페이징
+	List<BoardEntity> listPage(HashMap data);
 }

@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.css">
 </head>
 <body>
+<div id="nav">
+		<%@ include file="../inc/nav.jsp" %>
+</div>
 
 <h3 style="text-align: center;">수정 페이지 </h3>
 	<div class="container">
@@ -25,7 +28,6 @@
 				<textarea class="form-control" name="content" rows="3">${data.content}</textarea>
 			</div>
 			<input type="submit" class="btn btn-primary" value="게시물 수정">
-			<a href="/board/list" class="btn btn-primary">게시물 리스트</a>
 		</form>
 	
 	</div>

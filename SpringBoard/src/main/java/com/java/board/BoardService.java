@@ -1,5 +1,6 @@
 package com.java.board;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,16 @@ public class BoardService {
 	
 	public int modBoard(BoardEntity p) {
 		return mapper.modBoard(p);
+	}
+	public int count() {
+		return mapper.count();
+	}
+	public List<BoardEntity> GetListPage(int displayPost, int postNum){
+		HashMap data = new HashMap();
+		data.put("displayPost", displayPost);
+		data.put("postNum", postNum);
+		
+		return mapper.listPage(data);
 	}
 	
 	

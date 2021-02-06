@@ -9,6 +9,10 @@
 </head>
 <body>
 	<h3>디테일 페이지 </h3>
+	<div id="nav">
+		<%@ include file="../inc/nav.jsp" %>
+	</div>
+	
 	<div class="container">
 		<form action="/board/mod" method="get">
 			<div class="form-group">
@@ -29,7 +33,6 @@
 			</div>
 			<input type="submit" class="btn btn-primary" value="게시물 수정">
 			<a href="/board/delete?bno=${data.bno}" class="btn btn-primary" >게시물 삭제 </a>
-			<a href="/board/list" class="btn btn-primary">게시물 리스트</a>
 		</form>
 	
 	</div>

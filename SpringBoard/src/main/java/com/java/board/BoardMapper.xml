@@ -2,31 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.java.board.BoardMapper">
 	
+	<!-- 게시물 목록 -->
 	<select id="selList" resultType="BoardEntity">
 		select * from tbl_board
+		ORDER BY bno desc;
 	</select>
 	
-	<insert id="insBoard" parameterType="BoardEntity">
+	<!--  게시물 총 개수-->
+	<select id="count" resultType="int">
+		select count(bno) from tbl_board
+	</select>
+	
+	<!-- 게시물 목록+ 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="BoardEntity">
+		select bno, title,writer, regDate, viewCnt
+		from tbl_board
+		order by bno desc
+		limit #{displayPost}, #{postNum}
+	</select>
+	
+	
+	<!-- 게시물 추가-->
+	<insert id="insBoard" parameterType="BoardEntity" >
 		insert into tbl_board
 		(title,content,writer)
 		values
 		(#{title}, #{content}, #{writer})
 	</insert>
 	
+	<!--  게시물 조회 -->
 	<select id="selList_Unit" resultType="BoardEntity">
 		select * from tbl_board
 		where bno = #{bno}
 	</select>
 	
+	<!--  게시물 삭제  -->
 	<delete id="delBoard">
 		delete from tbl_board where bno = #{bno}
 	</delete>
 	
+	<!--  게시물 수정 -->
 	<update id="modBoard">
 		update tbl_board
 		set title = #{title}, content = #{content}
 		where bno = #{bno}
 	</update>
+	
+	
 	
 	
 	

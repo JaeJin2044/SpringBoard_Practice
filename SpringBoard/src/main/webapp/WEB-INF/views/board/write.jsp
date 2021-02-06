@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.css">
 </head>
 <body>
+<div id="nav">
+	<%@ include file="../inc/nav.jsp" %>
+</div>
 	<h3>게시글 작성</h3>
 	<div class="container">
 		<form action="/board/write" method="post">
