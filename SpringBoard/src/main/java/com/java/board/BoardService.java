@@ -49,7 +49,7 @@ public class BoardService {
 		data.put("postNum", postNum);
 		data.put("keyword",keyword);
 		data.put("searchType",searchType);
-
+//
 		return mapper.listPageSearch(data);
 	}
 	
