@@ -8,6 +8,7 @@
 </style>    
 
 <div id="nav">
+	<a href="/board/listPageSearch?num=1" class="btn btn-primary">글목록(페이징+검색기능추가)</a>
 	<a href="/board/listPage?num=1" class="btn btn-primary">글목록(페이징)</a>
  	<a href="/board/list" class="btn btn-primary" >글 목록 </a>
  	<a href="/board/write" class="btn btn-primary">글 작성</a>

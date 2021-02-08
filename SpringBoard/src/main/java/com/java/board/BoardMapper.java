@@ -19,4 +19,12 @@ public interface BoardMapper {
 	int count();
 	//게시물 목록 +페이징
 	List<BoardEntity> listPage(HashMap data);
+	
+	//게시물 목록+페이징+검색
+	List<BoardEntity> listPageSearch(HashMap data);
+	
+	//게시물 총개수 + 검색 적용
+	public int searchCount(HashMap data);
+	
+	
 }

@@ -43,6 +43,23 @@ public class BoardService {
 		return mapper.listPage(data);
 	}
 	
-	
+	public List<BoardEntity> listPageSearch(int displayPost, int postNum,String keyword,String searchType){
+		HashMap data = new HashMap();
+		data.put("displayPost", displayPost);
+		data.put("postNum", postNum);
+		data.put("keyword",keyword);
+		data.put("searchType",searchType);
 
+		return mapper.listPageSearch(data);
+	}
+	
+	public int searchCount(String searchType,String keyword) {
+		HashMap data = new HashMap();
+		data.put("searchType", searchType);
+		data.put("keyword", keyword);
+		
+		return mapper.searchCount(data);
+	}
+	
+	
 }
