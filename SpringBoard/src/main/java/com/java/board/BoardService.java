@@ -15,6 +15,7 @@ public class BoardService {
 	private BoardMapper mapper;
 	
 	public List<BoardEntity> list(){
+	
 		return mapper.selList();
 	}
 	

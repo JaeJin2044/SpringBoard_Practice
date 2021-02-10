@@ -2,6 +2,8 @@ package com.java.board;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.board.model.BoardEntity;
 import com.java.board.model.Page;
+import com.java.board.model.ReplyEntity;
+import com.java.board.reply.ReplyService;
 
 @Controller
 @RequestMapping("/board")
@@ -19,6 +23,10 @@ public class BoardController {
 
 	@Autowired
 	private BoardService service;
+	
+	@Inject
+	private ReplyService replyService;
+	
 
 	// 게시물 목록
 	@GetMapping("/list")
@@ -27,7 +35,6 @@ public class BoardController {
 		model.addAttribute("list", list);
 	}
 
-	// 게시물 작성
 	@GetMapping("/write")
 	public void write() {
 	}
@@ -40,9 +47,17 @@ public class BoardController {
 		return "redirect: /board/list";
 	}
 
+	//게시물 조회 
 	@GetMapping("/detail")
 	public void detail(BoardEntity p, Model model) {
 		model.addAttribute("data", service.detail(p));
+		
+		System.out.println(p.getBno());
+		//댓글 조회 
+		List<ReplyEntity> reply = replyService.replyList(p.getBno());
+
+		model.addAttribute("reply", reply);
+		
 	}
 
 	// 게시물 삭제
