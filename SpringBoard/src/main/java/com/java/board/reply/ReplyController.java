@@ -22,7 +22,7 @@ public class ReplyController {
 		System.out.println("bno = "+param.getBno());
 		System.out.println("writer = "+param.getWriter());
 		System.out.println("content = "+param.getContent());
-		service.replyWrite(param);
+		service.replyWrite(param);   
 		
 		return "redirect:/board/detail?bno="+param.getBno();
 		
